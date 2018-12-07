@@ -31,16 +31,6 @@ public class PesquisarClienteServlet extends HttpServlet {
             HttpServletResponse response)
             throws ServletException, IOException {
 
-        ClienteDAO idCliente = new ClienteDAO();
-        try {
-            List<Cliente> clientes = idCliente.obterCliente();
-            request.setAttribute("clientes", clientes);
-        } catch (Exception ex) {
-            Logger.getLogger(AdicionarClienteServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        request.setAttribute("nome", "");
-
         RequestDispatcher dispatcher
                 = request.getRequestDispatcher("/WEB-INF/Cliente/pesquisaCliente.jsp");
         dispatcher.forward(request, response);
@@ -87,22 +77,7 @@ public class PesquisarClienteServlet extends HttpServlet {
             dispatcher = getServletContext().getRequestDispatcher(destination);
         }
         
-        dispatcher.forward(request, response);
-        
-        //TODO: Enviar de acordo com as JSPs
-        
-        
-//        RequestDispatcher dispatcher
-//                = request.getRequestDispatcher(
-//                        "/WEB-INF/Cliente/resultadoPesqCliente.jsp");
-//        
-//        RequestDispatcher dispacDispatcher = 
-//                request.getRequestDispatcher("/WEB-INF/Conta/cadastroConta.jsp");
-//        
-//        
-//        
-//        dispacDispatcher.forward(request, response);
-//        dispatcher.forward(request, response);
+        dispatcher.forward(request, response);        
     }
 
 }
