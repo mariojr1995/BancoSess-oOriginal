@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author mario
  */
-@WebServlet (name = "PesquisarContaServlet", urlPatterns = {"/PesquisarClienteServlet"})
+@WebServlet (name = "PesquisarContaServlet", urlPatterns = {"/PesquisarContaServlet"})
 public class PesquisarContaServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request,
@@ -29,7 +29,7 @@ public class PesquisarContaServlet extends HttpServlet{
             throws ServletException, IOException {
 
         RequestDispatcher dispatcher
-                = request.getRequestDispatcher("/WEB-INF/Cliente/pesquisaCliente.jsp");
+                = request.getRequestDispatcher("/WEB-INF/Conta/pesquisaConta.jsp");
         dispatcher.forward(request, response);
     }
 
