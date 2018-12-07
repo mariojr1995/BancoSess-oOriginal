@@ -21,10 +21,8 @@ public abstract class Conta{
         this.numConta = numConta;
         this.saldo = saldo;
         this.cliente = cliente;
-
-        
     }
-
+        
     public double getSaldo() {
         return saldo;
     }

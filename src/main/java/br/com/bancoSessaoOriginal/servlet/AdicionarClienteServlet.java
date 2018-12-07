@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.bancoSessaoOriginal.servlet.cliente;
+package br.com.bancoSessaoOriginal.servlet;
 
 import br.com.bancoSessaoOriginal.dao.ClienteDAO;
 import javax.servlet.annotation.WebServlet;
@@ -39,7 +39,7 @@ public class AdicionarClienteServlet extends HttpServlet {
         
         ClienteDAO idCliente = new ClienteDAO();
         try {
-            List<Cliente> clientes = idCliente.obterIdCliente();
+            List<Cliente> clientes = idCliente.obterCliente();
             request.setAttribute("clientes", clientes);
         } catch (Exception ex) {
             Logger.getLogger(AdicionarClienteServlet.class.getName()).log(Level.SEVERE, null, ex);

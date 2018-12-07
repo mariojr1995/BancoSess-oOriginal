@@ -120,7 +120,7 @@ public class ClienteDAO implements ICrud<Cliente>{
         }
     }
     
-    public static List<Cliente> obterIdCliente()throws SQLException, Exception {
+    public static List<Cliente> obterCliente()throws SQLException, Exception {
         String sql = "SELECT * FROM CLIENTE";
         
         //Conexão para abertura e fechamento
@@ -145,7 +145,58 @@ public class ClienteDAO implements ICrud<Cliente>{
                 //Cria uma instância de Produto e popula com os valores do BD
                 
                 Cliente cliente = new Cliente();
-                cliente.setId(result.getInt("ID"));                         
+                cliente.setId(result.getInt("ID"));  
+                cliente.setNome(result.getString("NOME"));
+                clientes.add(cliente);
+
+            }
+            
+            return clientes;
+        } finally {
+            //Se o result ainda estiver aberto, realiza seu fechamento
+            if (result != null && !result.isClosed()) {
+                result.close();
+            }
+            //Se o statement ainda estiver aberto, realiza seu fechamento
+            if (preparedStatement != null && !preparedStatement.isClosed()) {
+                preparedStatement.close();
+            }
+            //Se a conexão ainda estiver aberta, realiza seu fechamento
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
+        }
+        
+ 
+    }
+    
+    public static List<Cliente> obterClienteNome(String consulta)throws SQLException, Exception {
+        String sql = "SELECT * FROM CLIENTE WHERE nome=?";
+        
+        //Conexão para abertura e fechamento
+        Connection connection = null;
+        //Statement para obtenção através da conexão, execução de
+        //comandos SQL e fechamentos
+        PreparedStatement preparedStatement = null;
+        //Armazenará os resultados do banco de dados
+        ResultSet result = null;
+        try {
+            //Abre uma conexão com o banco de dados
+            connection = obterConexao();
+            //Cria um statement para execução de instruções SQL
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, consulta);
+                        //Executa a consulta SQL no banco de dados
+            result = preparedStatement.executeQuery();
+            List<Cliente> clientes = new ArrayList<Cliente>();
+            
+            //Verifica se há pelo menos um resultado
+            while (result.next()) {
+                //Cria uma instância de Produto e popula com os valores do BD
+                
+                Cliente cliente = new Cliente();
+                cliente.setId(result.getInt("ID"));  
+                cliente.setNome(result.getString("NOME"));
                 clientes.add(cliente);
 
             }
