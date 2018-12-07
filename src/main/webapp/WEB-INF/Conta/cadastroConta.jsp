@@ -49,8 +49,8 @@
         <form method="post" action="${pageContext.request.contextPath}/AdicionarContaServlet">
             Número da Conta: <input type="text" name="txtNmrConta" id="txtNmrConta"><br><br>
             Número da Agência: <input type="text" name="txtNmrAgencia" id="txtNmrAgencia"><br><br>
-            Saldo: <input type="text" name="txtSaldo" id="txtSaldo">
-            
+            Saldo: <input type="text" name="txtSaldo" id="txtSaldo"><br><br>
+            Id do Cliente: <input type="text" name="txtIdCliente" id="txtIdCliente">
             <br><br>
             <button type="submit">Salvar</button>
             <button type="reset">Resetar</button>
