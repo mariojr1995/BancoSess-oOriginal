@@ -41,7 +41,7 @@ public class PesquisarContaServlet extends HttpServlet{
 
         try {
             List<ContaCorrente> contas;
-           ContaDAO contaDAO = new ContaDAO();
+           ContaDAO contaDAO = new ContaDAO() ;
             
            if(!numConta.isEmpty())
                 contas = contaDAO.obterConta(numConta);
