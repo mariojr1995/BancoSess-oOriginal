@@ -11,16 +11,32 @@ package br.com.bancoSessaoOriginal.model;
  */
 public abstract class Conta{
     private int numConta;
-    private int numAgencia = 0034;
+    private int numAgencia;
     private double saldo;
     private Cliente cliente;
 
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
+    private int idCliente;
+
     
-    public Conta(int numConta, int numAgencia, double saldo, Cliente cliente){
+    public Conta(int numConta, int numAgencia, Cliente cliente){
         this.numAgencia = numAgencia;
         this.numConta = numConta;
-        this.saldo = saldo;
         this.cliente = cliente;
+    }
+    public Conta(int numConta, int numAgencia, int idCliente){
+        this.numAgencia = numAgencia;
+        this.numConta = numConta;
+        this.idCliente = idCliente;
+    }
+    public Conta(){
+        
     }
         
     public double getSaldo() {

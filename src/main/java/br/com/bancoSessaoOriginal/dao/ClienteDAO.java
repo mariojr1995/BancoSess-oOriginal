@@ -171,7 +171,7 @@ public class ClienteDAO implements ICrud<Cliente>{
     }
     
     public static List<Cliente> obterClienteNome(String consulta)throws SQLException, Exception {
-        String sql = "SELECT * FROM CLIENTE WHERE nome=?";
+        String sql = "SELECT * FROM CLIENTE WHERE nome=? or id=?";
         
         //Conexão para abertura e fechamento
         Connection connection = null;
@@ -186,6 +186,7 @@ public class ClienteDAO implements ICrud<Cliente>{
             //Cria um statement para execução de instruções SQL
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, consulta);
+            preparedStatement.setString(2, consulta);
                         //Executa a consulta SQL no banco de dados
             result = preparedStatement.executeQuery();
             List<Cliente> clientes = new ArrayList<Cliente>();

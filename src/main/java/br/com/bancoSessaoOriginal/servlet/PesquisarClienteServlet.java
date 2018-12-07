@@ -75,19 +75,19 @@ public class PesquisarClienteServlet extends HttpServlet {
         String destination = tempDestination;
         //TODO: Atribuir variavel destination de acordo com o que o jsp (page) enviar
         //ex: destination = tempDestination
-        RequestDispatcher rd = null;
+        RequestDispatcher dispatcher = null;
         if(destination.equals("/WEB-INF/Cliente/resultadoPesqCliente.jsp"))
         {
             
-            rd = getServletContext().getRequestDispatcher(destination);
+            dispatcher = getServletContext().getRequestDispatcher(destination);
         }
         else if(destination.equals("/WEB-INF/Conta/cadastroConta.jsp"))
         {
             
-            rd = getServletContext().getRequestDispatcher(destination);
+            dispatcher = getServletContext().getRequestDispatcher(destination);
         }
         
-        rd.forward(request, response);
+        dispatcher.forward(request, response);
         
         //TODO: Enviar de acordo com as JSPs
         

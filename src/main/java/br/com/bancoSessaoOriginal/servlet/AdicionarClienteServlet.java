@@ -37,15 +37,15 @@ public class AdicionarClienteServlet extends HttpServlet {
             HttpServletResponse response)
             throws ServletException, IOException {
         
-        ClienteDAO idCliente = new ClienteDAO();
-        try {
-            List<Cliente> clientes = idCliente.obterCliente();
-            request.setAttribute("clientes", clientes);
-        } catch (Exception ex) {
-            Logger.getLogger(AdicionarClienteServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        request.setAttribute("nome", "");
+//        ClienteDAO idCliente = new ClienteDAO();
+//        try {
+//            List<Cliente> clientes = idCliente.obterCliente();
+//            request.setAttribute("clientes", clientes);
+//        } catch (Exception ex) {
+//            Logger.getLogger(AdicionarClienteServlet.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        
+//        request.setAttribute("nome", "");
         
         RequestDispatcher dispatcher
                 = request.getRequestDispatcher("/WEB-INF/Cliente/cadastroCliente.jsp");
@@ -74,12 +74,12 @@ public class AdicionarClienteServlet extends HttpServlet {
             
 //            cliente.setEndereco(endereco);
             clienteDAO.cadastrar(cliente);
+            request.setAttribute("mensagem", "Conta cadastrada com sucesso");
             
         } catch (Exception e) {
              System.out.println(e.getMessage());
         }
-            request.setAttribute("cliente", cliente); 
-            request.setAttribute("endereco", endereco); 
+ 
         
             RequestDispatcher dispatcher 
                     = request.getRequestDispatcher(

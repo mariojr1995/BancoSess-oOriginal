@@ -39,24 +39,32 @@
                         </tr>
                     </tbody>
                 </table><br>
-                
+
                 <button>Pesquisar</button>
 
             </div>
         </form>
         <h1>Cadastro de conta</h1>
-
+        <c:if test="${not empty mensagem}">
+            <div class="alert alert-info text-center" role="alert">
+                <c:out value="${mensagem}" />
+            </div>
+        </c:if>
         <form method="post" action="${pageContext.request.contextPath}/AdicionarContaServlet">
-            Número da Conta: <input type="text" name="txtNmrConta" id="txtNmrConta"><br><br>
-            Número da Agência: <input type="text" name="txtNmrAgencia" id="txtNmrAgencia"><br><br>
-            Saldo: <input type="text" name="txtSaldo" id="txtSaldo"><br><br>
-            Id do Cliente: <input type="text" name="txtIdCliente" id="txtIdCliente">
-            <br><br>
-            <button type="submit">Salvar</button>
-            <button type="reset">Resetar</button>
+            <div id="cadastroConta">
+                Número da Conta: <input type="text" name="txtNumConta" id="txtNumConta"><br><br>
+                Número da Agência: <input type="text" name="txtNumAgencia" id="txtNumAgencia"><br><br>
+                Saldo: <input type="text" name="txtSaldo" id="txtSaldo"><br><br>
+                Id do Cliente: <input type="text" name="txtIdCliente" id="txtIdCliente">
+                <br><br>    
+
+                <button>Salvar</button>
+                <button type="reset">Resetar</button>
+            </div>
         </form>
         <form method="get" action="${pageContext.request.contextPath}/AlterarCliente">
             <button type="submit" value="${cliente.id}" name="id">Alterar</button>
         </form>
+
     </body>
 </html>

@@ -42,16 +42,18 @@ public class ContaDAO implements ICrud<Conta> {
     }
 
     @Override
-    public void cadastrar(Conta obj) throws SQLException, Exception {
-        String sql = "INSERT INTO CONTA (NUMCONTA, NUMAGENCIA, SALDO, IDCLIENTECONTA) VALUES (?, ?, ?, ?)";
+    public void cadastrar(Conta conta) throws SQLException, Exception {
+        String sql = "INSERT INTO CONTA (NUMCONTA, NUMAGENCIA, IDCLIENTECONTA) VALUES (?, ?, ?)";
 
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         try {
-            connection = obterConexao();
+            connection = obterConexao();            
             preparedStatement = connection.prepareStatement(sql);
             //Configura os parâmetros do "PreparedStatement"
-            
+            preparedStatement.setInt(1, conta.getNumConta());
+            preparedStatement.setInt(2, conta.getNumAgencia());
+            preparedStatement.setInt(3, conta.getIdCliente());
             
             
            

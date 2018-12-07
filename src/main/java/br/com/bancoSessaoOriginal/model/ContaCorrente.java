@@ -12,8 +12,16 @@ package br.com.bancoSessaoOriginal.model;
 public class ContaCorrente extends Conta{
 
     
-    public ContaCorrente(int numConta, int numAgencia, double saldo, Cliente cliente){
-        super(numConta, numAgencia, saldo, cliente);
+    public ContaCorrente(int numConta, int numAgencia, Cliente cliente){
+        super(numConta, numAgencia, cliente);
     }
+    
+    public ContaCorrente(int numConta, int numAgencia, int idCliente){
+        super( numConta, numAgencia, idCliente);
+    }
+    public ContaCorrente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }
