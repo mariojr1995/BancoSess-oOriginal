@@ -28,7 +28,7 @@
                             <c:if test="${contas != null}">
                                 <c:forEach items="${contas}" var="contas">
                                     <td>${contas.numConta}</td>
-                                    <td>${conta.saldo}</td>                            
+                                    <td>${contas.saldo}</td>                            
                                 </c:forEach>
                             </c:if>
                         </tr>
@@ -37,7 +37,14 @@
             </div>
         </form>
             <form method="post" action="${pageContext.request.contextPath}/DepositoServlet">
-                <button>Deposito</button>
+                Digite o valor para deposito: <input type="text" name="txtValorDep" id="txtValorDep"><br><br>
+                Confirme o Numero da Conta:   <input type="text" name="txtNumConta" id="txtNumConta"><br><br>
+                <button>Deposito</button><br><br>
+            </form>
+                 <form method="post" action="${pageContext.request.contextPath}/SaqueServlet">
+                Digite o valor para saque <input type="text" name="txtValorSaque" id="txtValorSaque"><br><br>
+                Confirme o Numero da Conta:   <input type="text" name="txtNumConta" id="txtNumConta"><br><br>
+                <button>Saque</button>
             </form>
     </body>
 </html>

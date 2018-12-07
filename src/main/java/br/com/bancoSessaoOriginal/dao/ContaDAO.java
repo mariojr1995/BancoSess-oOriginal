@@ -100,7 +100,10 @@ public class ContaDAO implements ICrud<Conta>, ITransacao {
                 
                 ContaCorrente conta = new ContaCorrente();
                 conta.setNumConta(result.getInt("numConta"));  
-                conta.setSaldo(result.getDouble("saldo"));
+//                Double saldo = result.getDouble("saldo");    
+                Double saldo = 2.0;
+
+                conta.setSaldo(saldo);
                 contas.add(conta);
 
             }

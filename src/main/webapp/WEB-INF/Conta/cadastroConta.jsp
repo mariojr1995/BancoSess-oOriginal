@@ -18,7 +18,7 @@
     <body>
 
         <form method="post" action="${pageContext.request.contextPath}/PesquisarClienteServlet">
-            Pesquisa de Clientes
+            Pesquisa de Contas
             <div id="pesquisaCliente">           
                 Nome: <input type="text" id="txtPesqNome" name="txtPesqNome">&nbsp;&nbsp;&nbsp;
                 Cpf: <input type="number" id="txtPesqCPF" name="txtPesqCPF"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit">Pesquisar</button><br><br>
