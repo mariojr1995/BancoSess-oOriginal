@@ -17,7 +17,8 @@
 
     <body>
 <form method="post" action="${pageContext.request.contextPath}/PesquisarClienteServlet">
-        Pesquisa de Clientes
+        <h3>Pesquisa de Cliente</h3>
+        <br>
         <div id="pesquisaCliente">
             Nome: <input type="text" id="txtPesqNome" name="txtPesqNome">&nbsp;&nbsp;&nbsp;
             Cpf: <input type="number" id="txtPesqCPF" name="txtPesqCPF"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit">Pesquisar</button><br><br>
@@ -34,7 +35,8 @@
                     </tr>
                 </tbody>
             </table><br>
-            <button>Editar</button>
+             <button>Editar</button>
+             <button type="reset" onclick="window.location.href = 'menu.jsp';">Voltar</button>
 
         </div>
     </body>

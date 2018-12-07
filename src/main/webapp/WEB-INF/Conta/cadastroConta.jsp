@@ -18,7 +18,9 @@
     <body>
 
         <form method="post" action="${pageContext.request.contextPath}/PesquisarClienteServlet">
-            Pesquisa de Contas
+            
+            <h3>Autenticacão do Cliente</h3>
+            <br>
             <div id="pesquisaCliente">           
                 Nome: <input type="text" id="txtPesqNome" name="txtPesqNome">&nbsp;&nbsp;&nbsp;
                 Cpf: <input type="number" id="txtPesqCPF" name="txtPesqCPF"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit">Pesquisar</button><br><br>
@@ -43,8 +45,9 @@
                 <button>Pesquisar</button>
 
             </div>
+            <hr>
         </form>
-        <h1>Cadastro de conta</h1>
+        <h1>Dados da conta : Cadastro</h1>
         <c:if test="${not empty mensagem}">
             <div class="alert alert-info text-center" role="alert">
                 <c:out value="${mensagem}" />
@@ -58,9 +61,11 @@
                 Id do Cliente: <input type="text" name="txtIdCliente" id="txtIdCliente">
                 <br><br>    
 
-                <button>Salvar</button>
-                <button type="reset">Resetar</button>
+                <button>Salvar</button>&nbsp;
+                <button type="reset" onclick="window.location.href = 'menu.jsp';">Voltar</button>
+                 <br>
             </div>
+            <br>
         </form>
         <form method="get" action="${pageContext.request.contextPath}/AlterarCliente">
             <button type="submit" value="${cliente.id}" name="id">Alterar</button>
