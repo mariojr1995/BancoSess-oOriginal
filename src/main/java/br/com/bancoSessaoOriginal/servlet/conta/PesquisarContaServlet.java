@@ -63,7 +63,7 @@ public class PesquisarContaServlet extends HttpServlet{
         //TODO: Atribuir variavel destination de acordo com o que o jsp (page) enviar
         //ex: destination = tempDestination
         RequestDispatcher dispatcher = 
-                request.getRequestDispatcher("/WEB-INF/Cliente/resultadoPesquisaConta.jsp");      
+                request.getRequestDispatcher("/WEB-INF/Conta/resultadoPesqConta.jsp");      
         
         dispatcher.forward(request, response);        
     }

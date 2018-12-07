@@ -19,7 +19,7 @@
         <form method="post" action="${pageContext.request.contextPath}/PesquisarContaServlet">
         Pesquisa de Clientes
         <div id="pesquisaCliente">
-            Número da Conta: <input type="text" id="txtPesqNome" name="txtPesqNome">&nbsp;&nbsp;&nbsp;
+            Número da Conta: <input type="text" id="txtNumConta" name="txtNumConta">&nbsp;&nbsp;&nbsp;
            <button type="submit">Pesquisar</button><br><br>
             <input type="hidden" id="txtPag" name="txtPag" value = "/WEB-INF/Cliente/resultadoPesqConta.jsp">
             <table width="400" border="1">
