@@ -1,9 +1,8 @@
 <%-- 
-    Document   : resultadoPesqCliente
-    Created on : 04/12/2018, 20:51:01
-    Author     : mario
+    Document   : pesquisa
+    Created on : 09/11/2018, 21:50:35
+    Author     : mario.agjunior
 --%>
-
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
